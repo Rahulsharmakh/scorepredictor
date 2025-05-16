@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Writing Score Predictor</title>
+</head>
+<body>
+    <h2>Enter Student Information</h2>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br><br>
+
+        <label for="race">Race/Ethnicity:</label>
+        <select name="race" required>
+            <option value="group A">Group A</option>
+            <option value="group B">Group B</option>
+            <option value="group C">Group C</option>
+            <option value="group D">Group D</option>
+            <option value="group E">Group E</option>
+        </select>
+        <br><br>
+
+        <label for="education">Parental Level of Education:</label>
+        <select name="education" required>
+            <option value="some high school">Some High School</option>
+            <option value="high school">High School</option>
+            <option value="some college">Some College</option>
+            <option value="associate's degree">Associate's Degree</option>
+            <option value="bachelor's degree">Bachelor's Degree</option>
+            <option value="master's degree">Master's Degree</option>
+        </select>
+        <br><br>
+
+        <label for="lunch">Lunch:</label>
+        <select name="lunch" required>
+            <option value="standard">Standard</option>
+            <option value="free/reduced">Free/Reduced</option>
+        </select>
+        <br><br>
+
+        <label for="test preparation course">Test Preparation Course:</label>
+        <select name="test preparation course" required>
+            <option value="none">None</option>
+            <option value="completed">Completed</option>
+        </select>
+        <br><br>
+
+        <label for="math">Math Score:</label>
+        <input type="number" name="math" min="0" max="100" required>
+        <br><br>
+
+        <label for="reading">Reading Score:</label>
+        <input type="number" name="reading" min="0" max="100" required>
+        <br><br>
+
+        <input type="submit" value="Predict Writing Score">
+    </form>
+
+    {% if result %}
+        <h3>Predicted Writing Score: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
