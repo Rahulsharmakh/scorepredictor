@@ -219,4 +219,3 @@ wsproto==1.2.0
 xhtml2pdf==0.2.15
 yfinance==0.2.52
 zopfli==0.2.3
-web: gunicorn scorepredictor.wsgi
